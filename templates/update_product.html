@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Update Product</title>
+    <!-- Include Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+
+    <div class="container mt-4">
+        <h1 class="text-center mb-4">Update Product</h1>
+
+        <form method="POST" enctype="multipart/form-data" class="card p-4">
+            {{ form.hidden_tag() }}
+
+            <div class="form-group">
+                {{ form.name.label(class="form-label") }}
+                {{ form.name(class="form-control", size=32) }}
+                {% for error in form.name.errors %}
+                    <span class="text-danger">{{ error }}</span>
+                {% endfor %}
+            </div>
+
+            <div class="form-group">
+                {{ form.price.label(class="form-label") }}
+                {{ form.price(class="form-control", size=32) }}
+                {% for error in form.price.errors %}
+                    <span class="text-danger">{{ error }}</span>
+                {% endfor %}
+            </div>
+
+            <div class="form-group">
+                {% if product.image_filename %}
+    <img src="{{ url_for('static', filename='images/' + product.image_filename) }}" class="card-img-top img-fluid" alt="{{ product.name }} Product Image" style="object-fit: contain; height: 140px;">
+{% endif %}
+
+                {{ form.image.label(class="form-label") }}
+                {{ form.image(class="form-control-file") }}
+                {% for error in form.image.errors %}
+                    <span class="text-danger">{{ error }}</span>
+                {% endfor %}
+            </div>
+
+            <button type="submit" class="btn btn-primary">Update Product</button>
+        </form>
+
+        <a href="{{ url_for('products') }}" class="btn btn-link mt-3">Back to Product List</a>
+    </div>
+
+    <!-- Include Bootstrap JS and its dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlashIt Grocery Shop</title>
+    <!-- Include Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        .navbar-custom {
+            background-color: #427b58; /* A green shade for the navbar */
+        }
+        .hero-section {
+            background: url('grocery-banner.jpg') no-repeat center center; /* Replace with your banner image */
+            background-size: cover;
+            color: black;
+            padding: 100px 0;
+            text-align: center;
+        }
+        .section {
+            padding: 60px 0;
+        }
+        .footer-custom {
+            background-color: #333;
+            color: white;
+            padding: 20px 0;
+        }
+        .highlight {
+            color: #427b58; /* Highlight color */
+        }
+    </style>
+</head>
+<body>
+
+
+    
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-custom">
+        <div class="container">
+            <a class="navbar-brand text-white" href="/">
+                <i class="fas fa-shopping-basket"></i> FlashIt Grocery Shop
+            </a>
+            <!-- Add Login and Signup Buttons -->
+            <div class="ml-auto">
+                <a href="/login" class="btn btn-outline-light mr-2">Login</a>
+                <a href="/register" class="btn btn-outline-light">Signup</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero-section">
+        <div class="container">
+            <h1>Welcome to <span class="highlight">FlashIt</span> Grocery Shop</h1>
+            <p class="lead">Discover freshness, convenience, and value at our store.</p>
+            <a href="/products" class="btn btn-outline-dark btn-lg">Shop Now</a>
+        </div>
+    </div>
+
+    <!-- About Us Section -->
+    <div class="section bg-light" id="about">
+        <div class="container">
+            <h2 class="text-center mb-4">About FlashIt</h2>
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p style="margin-left: 20px;">We are a proud, family-owned grocery store with a rich history spanning over 20 years of dedicated service to our community. Our unwavering mission is to provide our valued customers with the freshest, highest-quality products at prices that are always affordable.</p>
+                    <!-- More content here -->
+                </div>
+                <div class="col-md-6">
+                    <img src="{{ url_for('static', filename='images/image.jpg') }}" class="card-img-top img-fluid rounded-circle" alt="Product Image" style="object-fit: cover; width: 300px; height: 300px; margin-left: 100px;">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Us Section -->
+    <div class="section" id="contact">
+        <div class="container">
+            <h2 class="text-center mb-4">Contact Us</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <p>Have questions or feedback? Feel free to reach out to us or visit our store at 123 Grocery Lane, Shopping City.</p>
+                    <!-- Optionally, add a contact form or additional contact details here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer-custom">
+        <div class="container text-center">
+            <p>&copy; 2023 FlashIt Grocery Shop. All rights reserved.</p>
+        </div>
+    </div>
+
+    <!-- Include Bootstrap JS and its dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

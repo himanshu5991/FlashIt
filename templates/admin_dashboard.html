@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <!-- Include Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <!-- Optional: Include a custom CSS file here to further customize your theme -->
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #ffe5b4;">
+        <div class="container">
+            <a class="navbar-brand" href="/">
+                <i class="fas fa-shopping-basket"></i> FlashIt Grocery Shop
+            </a>
+            <div class="ml-auto">
+                <a href="{{ url_for('logout') }}" class="btn btn-outline-light">Logout</a>
+
+            </div>
+        </div>
+    </nav>
+
+    <!-- Content -->
+    <div class="container mt-4">
+        <h1 class="mb-4 text-center">Admin Dashboard</h1>
+
+        <!-- Dashboard Content -->
+        <div class="row">
+            <!-- Manage Products -->
+            <div class="col-lg-6 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Manage Products</h5>
+                        <p class="card-text">Review and update product listings.</p>
+                        <a href="/products" class="btn btn-success">Go to Products</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Statistics -->
+            <div class="col-lg-6 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Product Statistics</h5>
+                        <canvas id="productStats"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Include Bootstrap JS and its dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- Chart.js for Graphs -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        var ctx = document.getElementById('productStats').getContext('2d');
+        var myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Product 1', 'Product 2', 'Product 3', 'Product 4'],
+                datasets: [{
+                    label: 'Sales',
+                    data: [12, 19, 3, 5],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

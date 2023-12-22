@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Dashboard - FlashIt</title>
+    <!-- Include Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            background-color: #f4f4f4;
+        }
+        .navbar-custom {
+            background-color: #427b58; /* Dark Green */
+        }
+        .navbar-custom .navbar-brand,
+        .navbar-custom .nav-link {
+            color: #fff;
+        }
+        .card-custom {
+            transition: transform .2s;
+        }
+        .card-custom:hover {
+            transform: scale(1.05);
+        }
+        .card-header-custom {
+            background-color: #6dbf91; /* Light Green */
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #427b58;">
+        <div class="container">
+            <a class="navbar-brand text-white" href="/">
+                <i class="fas fa-shopping-basket"></i> FlashIt Grocery Shop
+            </a>
+            <div class="ml-auto">
+                <a href="/products" class="btn btn-outline-light mr-2">Shop</a>
+                <a href="/orders" class="btn btn-outline-light mr-2">My Orders</a>
+                <a href="/logout" class="btn btn-outline-light mr-2">Logout</a>
+            </div>
+        </div>
+    </nav>
+    <!-- Content -->
+    <div class="container mt-5">
+        <h1 class="mb-4 text-center text-dark">Welcome, {{ customer_name }}</h1>
+
+        <!-- Dashboard Content -->
+        <div class="row">
+            <!-- Featured Products -->
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="card card-custom h-100">
+                    <div class="card-header card-header-custom">
+                        Featured Products
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">Check out the latest and most popular products in our store.</p>
+                        <a href="/products" class="btn btn-outline-dark">Explore</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Personalized Recommendations -->
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="card card-custom h-100">
+                    <div class="card-header card-header-custom">
+                        Recommended for You
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">Based on your interests and previous purchases.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Loyalty Program -->
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="card card-custom h-100">
+                    <div class="card-header card-header-custom">
+                        Your Loyalty Points
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">Earn points for every purchase and enjoy exclusive benefits.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- News and Updates -->
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="card card-custom h-100">
+                    <div class="card-header card-header-custom">
+                        News and Updates
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">Stay updated with our latest news, sales events, and blog posts.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Customer Support -->
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="card card-custom h-100">
+                    <div class="card-header card-header-custom">
+                        Need Help?
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">Access our customer support for any assistance or questions.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Include Bootstrap JS and its dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
